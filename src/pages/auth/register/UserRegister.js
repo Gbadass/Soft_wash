@@ -5,13 +5,18 @@ import facebook from "../../../assets/icons/facebook.png";
 import linkedIn from "../../../assets/icons/linkedin.png";
 import googlePlus from "../../../assets/icons/google-plus.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState,useContext } from 'react';
+import { registerUser } from '../../../services/register';
+import { variableManager } from '../../../context/VariablesContext';
+// import { async } from 'q';
+
 
 
 export default function Signup() {
     const navigate = useNavigate();
     const [empty, setEmpty] = useState(false);
-    const [handleSubmit, sethandleSubmit] =useState();
+    const { operation, setUser } = useContext(variableManager);
+    // const [handleSubmit, sethandleSubmit] =useState();
     const [userDetails, setUserDetails] = useState({
       fullName: "",
       email: "",
@@ -27,17 +32,29 @@ export default function Signup() {
           ? e.target.files[0]
           : e.target.value;
   
-    //   setUserDetails({ ...userDetails, [e.target.name]: value });
+      setUserDetails({ ...userDetails, [e.target.name]: value });
     }
   
     function handleValidation() {
       const { fullName, email, phone, password } = userDetails;
       if (fullName && email && phone && password) {
         handleSubmit(userDetails);
+        console.log(userDetails)
       } else {
         setEmpty(true);
       }
     }
+
+    async function handleSubmit(payload) {
+      const {data,error} = await registerUser(payload);
+      if(data){
+        setUser(data);
+        navigate('/UserLogin')
+      }
+      console.log(data?data:error);
+    }
+
+
   
    
     return (
@@ -166,6 +183,7 @@ export default function Signup() {
                   <div className="error">Password is required</div>
                 )}
               </div>
+              
   
               <div className="button-section">
                 <button
