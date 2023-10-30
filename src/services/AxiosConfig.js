@@ -6,7 +6,7 @@ export default function AxiosConfig() {
     baseURL: process.env.REACT_APP_BASE_URL,
     headers: {
       common: {
-        Authorization: `Bearer 12|${localStorage.getItem("stucademy-tks")}`,
+        Authorization: `Bearer 12|${localStorage.getItem("softwashUserToken")}`,
       },
     },
   });

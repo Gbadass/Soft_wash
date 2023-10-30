@@ -4,46 +4,50 @@ import facebook from "../../../assets/icons/facebook.png";
 import linkedIn from "../../../assets/icons/linkedin.png";
 import googlePlus from "../../../assets/icons/google-plus.png";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
+import { useState,useContext } from 'react';
+import{handleLogin} from '../../../services/Login'
+import { variableManager } from '../../../context/VariablesContext';
 
 export default function Login() {
     const navigate = useNavigate();
     const [phone, setPhone] = useState("");
-      const [email, setEmail] = useState("");
-      const [password, setPassword] = useState("");
-      const [err, setErr] = useState(false);
+      const [empty, setEmpty] = useState(false);
+      const { operation } = useContext(variableManager);
+      const [loginDetails, setLoginDetails] = useState({
+        email: "",
+        password: "",
+      });
+    
+
+      function handleChange(e) {
+        const value =
+          e.target.type === "checkbox"
+            ? e.target.checked
+            : e.target.type === "file"
+            ? e.target.files[0]
+            : e.target.value;
+    
+        setLoginDetails({ ...loginDetails, [e.target.name]: value });
+      }
   
-  
-   const handleSubmit = (e) => {
-          e.preventDefault();
-          if (email === "" || password === "") {
-              setErr(true);
-              return;
-          }
-          fetch(" API URL ")
-              .then((response) => {
-                  if (response.ok) {
-                      return response.json();
-                  } else {
-                      throw new Error('Error occurred while fetching user data');
-                  }
-              })
-              .then((data) => {
-                  const foundUser = data.find((user) => user.email === email && user.password === password);
-                  if (foundUser) {
-  
-                      alert("Login successful");
-                      console.log('Login successful:', foundUser);
-                     
-                  } else {
-                      alert('Login failed: Invalid email or password');
-                      
-                  }
-              })
-              .catch((error) => {
-                  console.log('Error occurred during login:', error);
-              });
-      };
+      function handleValidation() {
+        const {  email, password } = loginDetails;
+        if ( email && password) {
+          handleLoginSubmit(loginDetails);
+          console.log(loginDetails)
+        } else {
+          setEmpty(true);
+        }
+      }
+
+
+      async function handleLoginSubmit(payload){
+        const {data,error} = await handleLogin(payload);
+        if(data){
+          navigate('/')
+        }
+        console.log(data?data:error);
+      }
   
     return (
       <div className="signup-container login-container">
@@ -69,7 +73,7 @@ export default function Login() {
               or use your email account
             </center>
   
-            <form onSubmit={handleSubmit}>
+            <form action="">
               <div className="input-section">
                 <div>
                   {" "} 
@@ -77,13 +81,16 @@ export default function Login() {
                 </div>
                 <input
                   type="text"
-                  value={email}
                   id="email"
                   name="email"
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
                   placeholder="example@provider.com"
                 />
-                 {err === true && email === "" ? <p className="error">Email Address Required</p> : null}
+              {empty && !loginDetails.email && (
+                <div className="error">email is required</div>
+              )}
               </div>
   
               <div className="input-section">
@@ -96,16 +103,27 @@ export default function Login() {
                 </div>
                 <input
                   type="password"
+                  id="password"
                   name="password"
-                  value={password} 
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {
+                    handleChange(e);
+                  }}
                   placeholder="5+ characters"
                 />
-                {err === true && password === "" ? <p className="error">Password Required</p> : null}
+              {empty && !loginDetails.password && (
+                <div className="error">password is required</div>
+              )}
               </div>
   
               <div className="button-section">
-                <button type="submit">Sign In</button>
+                <button 
+                // disabled={operation.pending}
+                 onClick={async (e) => {
+                  e.preventDefault();
+                  handleValidation();
+                }}>
+                  Sign In
+                  </button>
               </div>
   
               <center
@@ -126,7 +144,8 @@ export default function Login() {
               <p className="welcome">Join Us Today!</p>
   
               <div className="button-section">
-                <button onClick={() => navigate("/UserRegister")}>
+                <button 
+                  onClick={() => navigate("/UserRegister")}> 
                   Sign Up
                 </button>
               </div>
