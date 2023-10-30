@@ -1,0 +1,69 @@
+@mixin buttonStyle($bg, $color, $border) {
+  width: 100%;
+  padding: 10px;
+  border: $border;
+  outline: none;
+  border-radius: 3px;
+  background-color: $bg;
+  color: $color;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@mixin inputStyle($border) {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  border: $border;
+}
+@mixin flex-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flex-evenly-center {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@mixin flex-start-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin flex-none-center {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-center-none {
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-none-end {
+  display: flex;
+  align-items: flex-end;
+}
+@mixin flex-end-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@mixin flex-none-start {
+  display: flex;
+  align-items: flex-start;
+}
+@mixin flex-between-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@mixin flex {
+  display: flex;
+}
