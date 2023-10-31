@@ -1,0 +1,124 @@
+.sub-portion{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+.reset-pic{
+    width: 50vw;
+    height: 100vh;
+}
+.reset-pic img{
+    width: 100%;
+    height: 100%;
+}
+.reset-form{
+    flex-direction: column;
+  }
+.reset-input{
+    width: 75%;
+}
+.reset-input-headers{
+    display:flex;
+    font-size:16px; 
+    /* justify-content:center */
+}
+.reset-btn{
+    width: 75%;
+}
+.reset-btn:hover{
+    color: rgb(4,54,74);
+}
+
+.sub-portion h1{
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    color: rgb(4,54,74);
+}
+.sub-portion h3{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+    color: rgb(4,54,74);
+}
+
+.reset-err-msg{
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    color: red;
+    font-size: 14px;
+}
+.form-bg{
+    background-color: whitesmoke;
+}
+
+.auth-digits{
+    width: 300px;
+   display: flex; 
+   margin: auto;
+   justify-content: space-between;
+}
+.auth-digits-input{
+    width: 45px;
+    height: 50px;
+}
+.timeDiv{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.timeDiv h5{
+    font-size: 15px;
+    margin-right: 10px;
+}
+.countdown_Timer{
+    color: red;
+}
+.resend-verification{
+    border: none;
+    font-size: 15px;
+    color: green;
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+.countdownDiv{
+    display: flex;
+}
+.passwrd-unmatch {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+  }
+  
+  .passwrd-match {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+    font-style: italic;
+  }
+
+
+  
+.auth-digits-input[type="number"]::-webkit-inner-spin-button,
+.auth-digits-input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.auth-digits-input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30px; 
+}
+
+  
+  
