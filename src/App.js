@@ -10,8 +10,8 @@ function App() {
     <div>
       <BrowserRouter>
        <Routes>
-         <Route path="/" element={<ResetPaswdPage />} />
-         <Route path="/new-password" element={<NewPaswdPage />} />
+         <Route path="/auth/reset-password" element={<ResetPaswdPage />} />
+         <Route path="/auth/new-password" element={<NewPaswdPage />} />
          <Route path="/auth/verify" element={<AuthenticatePaswdPage />} />
        </Routes>
       </BrowserRouter>
