@@ -46,6 +46,11 @@ function AuthenticatePaswd() {
     }
   }
 
+  const focusPreviousInput = (currentField, previousField) => {
+    if (currentField.value.length === 0) {
+      previousField.current.focus();
+    }
+  };
 
   const focusNextInput = (currentField, nextField) => {
     if (currentField.value.length === 1) {
@@ -80,6 +85,7 @@ function AuthenticatePaswd() {
                 onChange={(e) => {
                   setCode2(e.target.value.slice(0, 1));
                   focusNextInput(e.target, inputRefs.code3);
+                  focusPreviousInput(e.target, inputRefs.code1)
                 }}
                 min="0"
               />
@@ -93,6 +99,7 @@ function AuthenticatePaswd() {
                 onChange={(e) => {
                   setCode3(e.target.value.slice(0, 1));
                   focusNextInput(e.target, inputRefs.code4);
+                  focusPreviousInput(e.target, inputRefs.code2)
                 }}
                 min="0"
               />              
@@ -106,6 +113,7 @@ function AuthenticatePaswd() {
                 onChange={(e) => {
                   setCode4(e.target.value.slice(0, 1));
                   focusNextInput(e.target, inputRefs.code5);
+                  focusPreviousInput(e.target, inputRefs.code3)
                 }}
                 min="0"
               />
@@ -119,6 +127,7 @@ function AuthenticatePaswd() {
                 onChange={(e) => {
                   setCode5(e.target.value.slice(0, 1));
                   focusNextInput(e.target, inputRefs.code6);
+                  focusPreviousInput(e.target, inputRefs.code4)
                 }}
                 min="0"
               />
@@ -131,7 +140,7 @@ function AuthenticatePaswd() {
                 value={code6}
                 onChange={(e) => {
                   setCode6(e.target.value.slice(0, 1));
-                  
+                  focusPreviousInput(e.target, inputRefs.code5)
                 }}
                 min="0"
               />
