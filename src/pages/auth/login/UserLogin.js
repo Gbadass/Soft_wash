@@ -7,10 +7,10 @@ import { useNavigate } from "react-router-dom";
 import { useState,useContext } from 'react';
 import{handleLogin} from '../../../services/Login'
 import { variableManager } from '../../../context/VariablesContext';
+import{Loader} from "../../../common/Loader"
 
 export default function Login() {
     const navigate = useNavigate();
-    const [phone, setPhone] = useState("");
       const [empty, setEmpty] = useState(false);
       const { operation } = useContext(variableManager);
       const [loginDetails, setLoginDetails] = useState({
@@ -122,7 +122,7 @@ export default function Login() {
                   e.preventDefault();
                   handleValidation();
                 }}>
-                  Sign In
+                {operation.pending ? Loader("info", "sm") : "Sign In"}
                   </button>
               </div>
   

@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useState,useContext } from 'react';
 import { registerUser } from '../../../services/register';
 import { variableManager } from '../../../context/VariablesContext';
+import {Loader} from "../../../common/Loader"
 // import { async } from 'q';
 
 

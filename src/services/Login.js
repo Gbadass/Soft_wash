@@ -7,8 +7,8 @@ export async function handleLogin(payload){
     data = response.data;
     localStorage.setItem("softwashUser", JSON.stringify(data));
 
-  } catch (error) {
-    error = error;
+  } catch (err) {
+    error = err;
   }
   return {data,error};
 
