@@ -3,6 +3,8 @@ import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "../styles/ResetPaswd.css"
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 function AuthenticatePaswd() {
   const [code1, setCode1] = useState("");
@@ -12,6 +14,7 @@ function AuthenticatePaswd() {
   const [code5, setCode5] = useState("");
   const [code6, setCode6] = useState("");
   const [err, setErr] = useState(false);
+  const Navigate = useNavigate()
 
 
   const inputRefs = {
@@ -23,11 +26,23 @@ function AuthenticatePaswd() {
     code6: useRef(null),
   };
 
-  const newPaswdFunc = (e) => {
+  const newPaswdFunc = async (e) => {
     e.preventDefault();
     if (code1 === "" || code2 === "" || code3 === "" || code4 === "" || code5 === "" || code6 === "") {
       setErr(true);
       return;
+    }
+    const resetCode = code1 + code2 + code3 + code4 + code5 + code6;
+
+    try {
+      const resp = await axios.post("http://localhost:8000/auth/validate-reset", resetCode)
+      if (resp.data.msg === "successful"){
+        setTimeout(() => {
+          Navigate("/auth/new-password")
+        }, 3000)
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
