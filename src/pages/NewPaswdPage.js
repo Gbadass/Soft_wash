@@ -4,7 +4,7 @@ import NewPaswdForm from "../components/NewPaswdForm";
 
 function NewPaswdPage(){
     return(
-        <div className="d-flex">
+        <div className="d-flex form-bg">
             <div className="sub-portion reset-pic">
                 <img src={Img} alt="" />
             </div>

@@ -22,7 +22,7 @@
 .reset-input-headers{
     display:flex;
     font-size:16px; 
-    justify-content:center
+    /* justify-content:center */
 }
 .reset-btn{
     width: 75%;
@@ -53,3 +53,57 @@
     color: red;
     font-size: 14px;
 }
+.form-bg{
+    background-color: whitesmoke;
+}
+
+.auth-digits{
+    width: 300px;
+   display: flex; 
+   margin: auto;
+   justify-content: space-between;
+}
+.auth-digits-input{
+    width: 40px;
+    height: 50px;
+}
+.timeDiv{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.timeDiv h5{
+    font-size: 15px;
+    margin-right: 10px;
+}
+.countdown_Timer{
+    color: red;
+}
+.resend-verification{
+    border: none;
+    font-size: 15px;
+    color: green;
+    background-color: whitesmoke;
+    padding: 0;
+    margin: 0;
+}
+.countdownDiv{
+    display: flex;
+}
+.passwrd-unmatch {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red;
+    font-style: italic;
+  }
+  
+  .passwrd-match {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+    font-style: italic;
+  }
+
+
+  
+  
