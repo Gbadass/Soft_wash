@@ -1,103 +1,10 @@
-
-// import React, { useState } from 'react';
-// import { Container } from 'react-bootstrap';
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
-// import "../styles/ResetPaswd.css"
-
-
-// function AuthenticatePaswd() {
-
-//     const [code1, setCode1] = useState("");
-//     const [code2, setCode2] = useState("");
-//     const [code3, setCode3] = useState("");
-//     const [code4, setCode4] = useState("");
-//     const [code5, setCode5] = useState("");
-//     const [code6, setCode6] = useState("");
-//     const [err, setErr] = useState(false);
-
-//     const newPaswdFunc = (e) => {
-//         e.preventDefault();
-//         if (code1 === "" || code2 ==="" || code3 ==="" || code4 ==="" || code5 ==="" || code6 ==="" ){
-//             setErr(true);
-//             return;
-//         }
-//     }
-
-
-//   return (
-//     <div className=''>
-//         <Container>
-//           <Form className='centralize reset-form mt-4' onSubmit={newPaswdFunc}>
-//           <Form.Group controlId="formBasicInput" className='reset-input'>
-//             <div className='auth-digits'>
-//                 <Form.Control className='auth-digits-input' 
-//                 type="number" placeholder="" 
-//                 value={code1} 
-//                 onChange={(e) => setCode1(e.target.value.slice(0, 1))}
-//                 min="0"/>
-
-//                 <Form.Control className='auth-digits-input' 
-//                 type="number" 
-//                 placeholder="" 
-//                 value={code2} 
-//                 onChange={(e) => setCode2(e.target.value.slice(0, 1))}
-//                 min="0"/>
-
-//                 <Form.Control className='auth-digits-input' 
-//                 type="number" 
-//                 placeholder="" 
-//                 value={code3} 
-//                 onChange={(e) => setCode3(e.target.value.slice(0, 1))}
-//                 min="0"/>
-
-//                 <Form.Control className='auth-digits-input' 
-//                 type="number" 
-//                 placeholder="" 
-//                 value={code4} 
-//                 onChange={(e) => setCode4(e.target.value.slice(0, 1))}
-//                 min="0"/>
-
-//                 <Form.Control className='auth-digits-input' 
-//                 type="number" 
-//                 placeholder="" 
-//                 value={code5} 
-//                 onChange={(e) => setCode5(e.target.value.slice(0, 1))}
-//                 min="0"/>
-
-//                 <Form.Control className='auth-digits-input' 
-//                 type="number" 
-//                 placeholder="" 
-//                 value={code6} 
-//                 onChange={(e) => setCode6(e.target.value.slice(0, 1))}
-//                 min="0"/>
-
-//             </div>
-//             {err && (code1==="" || code2==="" || code3==="" || code4==="" || code5==="" || code6==="")? <span className='reset-err-msg'>Kindly enter the authentication code sent to your email</span> : null}
-//           </Form.Group>
-
-          
-          
-//           <Button className='reset-btn mt-3' type="submit">
-//             Verify
-//           </Button>        
-//           </Form>
-//         </Container>
-//     </div>
-//   );
-// }
-
-// export default AuthenticatePaswd;
-
-
-
-
-
 import React, { useState, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import "../styles/ResetPaswd.css"
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
 function AuthenticatePaswd() {
   const [code1, setCode1] = useState("");
@@ -107,6 +14,7 @@ function AuthenticatePaswd() {
   const [code5, setCode5] = useState("");
   const [code6, setCode6] = useState("");
   const [err, setErr] = useState(false);
+  const Navigate = useNavigate()
 
 
   const inputRefs = {
@@ -118,11 +26,23 @@ function AuthenticatePaswd() {
     code6: useRef(null),
   };
 
-  const newPaswdFunc = (e) => {
+  const newPaswdFunc = async (e) => {
     e.preventDefault();
     if (code1 === "" || code2 === "" || code3 === "" || code4 === "" || code5 === "" || code6 === "") {
       setErr(true);
       return;
+    }
+    const resetCode = code1 + code2 + code3 + code4 + code5 + code6;
+
+    try {
+      const resp = await axios.post("http://localhost:8000/auth/validate-reset", resetCode)
+      if (resp.data.msg === "successful"){
+        setTimeout(() => {
+          Navigate("/auth/new-password")
+        }, 3000)
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
