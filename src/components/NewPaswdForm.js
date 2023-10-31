@@ -60,7 +60,7 @@ function NewPaswdForm() {
       email: user.email
     }
     try {
-      const resp = await axios.put("http://localhost:8000/auth/password-reset", resetInfo)
+      const resp = await axios.put("http://localhost:8003/auth/password-reset", resetInfo)
       if (resp.data.msg === "successful"){
         setTimeout(() => {
           Navigate("/auth/login")

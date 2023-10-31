@@ -97,7 +97,7 @@ export default function Login() {
                 <div className="d-flex justify-content-between mb-2 login-labell ">
                   {" "}
                   <label htmlFor="password login-label2" >PASSWORD</label>{" "}
-                  <span className="forgot-password pointer">
+                  <span className="forgot-password pointer" onClick={() => navigate("/auth/reset-password")}>
                     Forgot your password?
                   </span>
                 </div>
