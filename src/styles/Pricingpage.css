@@ -8,5 +8,67 @@
   --text-grey: #6B7280; 
   --text-dark: #222843; 
   --success:#00CC73;
+  --headercolor:#15B8D8;
 
 }
+
+.below-navbar{
+  background-color: var(--headercolor);
+  height: auto;
+  width: 100%;
+}
+
+.pricing-ptag{
+  color: var(--headercolor);
+}
+
+.all-ptag{
+  color: var(--headercolor);
+}
+
+.cloth-price-ptag{
+  color: var(--headercolor);
+}
+
+.pricing-order-button{
+  background-color: var(--headercolor);
+  color: white;
+}
+
+.cloth-title-div ul{
+  display: flex;
+}
+
+.cloth-title-div ul li{
+  display: inline-block;
+  margin: 0;
+  list-style: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.footer-line{
+  width: 100%;
+  margin-top: 150px;
+}
+
+.services-col ul li{
+  list-style: none;
+  font-size: 15px;
+  color: #111111;
+  margin-top: 10px;
+
+}
+
+.services-col ul {
+margin-top: 30px;
+}
+
+
+@media (min-width: 768px) {
+  .cloth-title-div p{
+    white-space: normal;
+    width: 90%;
+  }
+}
+
