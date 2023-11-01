@@ -30,7 +30,7 @@ function ResetPaswdForm() {
       if (resp.data.msg === "successful") {
         sessionStorage.setItem("softWash", JSON.stringify(resp.data.userExists))
         setTimeout(() => {
-          Navigate("/UserLogin");
+          Navigate("/auth/verify");
         }, 3000)
       }
     } catch (error) {
