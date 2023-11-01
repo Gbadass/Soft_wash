@@ -4,10 +4,61 @@
     box-sizing: border-box;
 }
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 .centralize{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.custom-bg-color{
+    background-color: rgb(22,188,219);
+    color: white;
+}
+.how-we-work-banner{
+    margin-top: 70px;
+}
+.how-we-work-banner h4{
+    font-size: 20px;
+    }
+
+
+@media (max-width:770){
+   .how-we-work-subnav h2{
+        font-size: 15px;
+   } 
+   .how-we-work-subnav h4{
+    font-size: 15px;
+    }
+}
+
+
+
+
+@media (max-width:427px) {
+    .how-we-work-subnav h2{
+        font-size: 17px;
+        margin-right: 15px;
+   } 
+   .how-we-work-subnav h4{
+    font-size: 15px;
+    }
+    .how-we-work-banner{
+        margin-top: 20px;
+    }
+    .how-we-work-banner h4{
+        font-size: 17px;
+    }
+    .how-we-work-banner h1{
+        font-size: 20px;
+    }
+    .how-we-work-banner p{
+        font-size: 12px;
+    }
+    .how-we-work-prop img{
+        width: 80%;
+        height: 80%;
+    }  
 }

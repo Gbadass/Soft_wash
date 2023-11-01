@@ -77,7 +77,7 @@ function AuthenticatePaswd() {
                 min="0"
               />
               <Form.Control
-                ref={inputRefs.code2}
+        z        ref={inputRefs.code2}
                 className='auth-digits-input'
                 type="number"
                 placeholder=""
