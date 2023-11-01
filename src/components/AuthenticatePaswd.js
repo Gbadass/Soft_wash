@@ -35,7 +35,7 @@ function AuthenticatePaswd() {
     const resetCode = code1 + code2 + code3 + code4 + code5 + code6;
 
     try {
-      const resp = await axios.post("http://localhost:8000/auth/validate-reset", resetCode)
+      const resp = await axios.post("http://localhost:8003/auth/validate-reset", resetCode)
       if (resp.data.msg === "successful"){
         setTimeout(() => {
           Navigate("/auth/new-password")

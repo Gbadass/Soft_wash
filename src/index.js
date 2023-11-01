@@ -3,22 +3,20 @@ import ReactDOM from "react-dom/client";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./reportWebVitals";
+import VariablesContext from './context/VariablesContext';
 
-// REACT BOOTSTRAP CONFIG
-import "../node_modules/react-bootstrap/dist/react-bootstrap.min.js"
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
-
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <VariablesContext>
     <App />
-  </React.StrictMode>
+  </VariablesContext>,
 );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+reportWebVitals();

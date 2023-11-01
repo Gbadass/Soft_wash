@@ -1,0 +1,294 @@
+.signup-container {
+    display: flex;
+    gap: 10px;
+    height: 90vh;
+
+}
+
+.copyright {
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.banner-section {
+    background-image: url(../assets/images/Image1.avif);
+    width: 50%;
+    height: 112%;
+    background-size: cover;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    margin-top: -10px;
+}
+
+.banner-section h1 {
+    color: white;
+}
+
+.welcome {
+    font-weight: 800;
+    font-size: 35px;
+    margin-top: -80px !important;
+    color: white;
+}
+
+.welcome button {
+    padding: 10px 15px;
+    background-color: rgba(242, 235, 235, 0.3);
+    border: 0px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.welcome button:hover {
+    background-color: black;
+
+}
+
+.icons-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+.icons-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0px;
+}
+
+/* 
+.welcome-section {
+    margin-top: -100px;
+} */
+
+/* .button-section {} */
+
+
+.content {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+
+.form-section {
+    width: 50%;
+}
+
+
+
+.input-section {
+    margin: 20px 0px;
+}
+
+.input-section label {
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: -5px !important;
+}
+
+.input-section input {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border-radius: 7px;
+    border: 0.5px solid grey;
+    margin-top: -5px;
+}
+
+
+.button-section {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.button-section button {
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    border-radius: 7px;
+    width: 50%;
+    background-color: #0D99FF;
+    border: none;
+    transition: all 0.3s ease-in;
+}
+
+.banner-section button:hover {
+    background-color: #0D99FF;
+    /* border: 2px solid white; */
+    color: white;
+    font-weight: 600;
+}
+
+.note {
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    margin-top: -5px;
+}
+
+
+
+.forgot-password {
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    color: rgb(110, 164, 230);
+}
+
+.logo-section {
+    margin-bottom: 40px;
+}
+
+/* //LOGIN CONTAINER  */
+
+.for-mobile {
+    display: none;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+
+}
+
+
+
+/* Styles for tablets */
+@media (max-width: 768px) {
+    .signup-container {
+        
+        width: 100%;
+        /* gap: 10px; */
+        /* height: 90vh; */
+    
+    }
+
+    .banner-section {
+      
+        width: 100%;
+       
+    }
+
+    .input-section {
+        width: 200px;
+        margin: 20px 0px;
+    }
+
+    .input-section input {
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        border-radius: 7px;
+        border: 0.5px solid grey;
+        margin-top: -5px;
+    }
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  /* Styles for phones */
+  @media (max-width: 480px) {
+    .signup-container {
+        width: 100%;
+        display: block;
+        text-align: center;
+        align-items: center;
+        gap: 10px;
+        height: 90vh;
+    
+    }
+
+    .content {
+        width: 400px;
+        text-align: center;
+        /* align-items: center; */
+        margin: auto;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+
+    .banner-section {
+    width: 100%;
+    }
+
+    
+
+    .input-section {
+        width: 100%;
+        margin: 20px 0px;
+        align-items: center;
+        text-align: center;
+    }
+    .input-section input {
+        width: 300px;
+        padding: 10px;
+        outline: none;
+        border-radius: 7px;
+        border: 0.5px solid grey;
+        margin-top: -5px;
+    }
+    .button-section {
+        width: 100%;
+        margin: 20px 0px;
+        display: flex;
+        justify-content: center;
+    
+    
+    }
+
+    .login-label{
+    margin-left: -220px;
+    /* text-align: start; */
+    }
+    .login-labell{
+
+        justify-content: space-around !important;
+    }
+  }
+  
+
+ 

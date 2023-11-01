@@ -23,14 +23,14 @@ function ResetPaswdForm() {
 
     try {
       const resp = await axios.post(
-        "http://localhost:8000/auth/reset-email",
+        "http://localhost:8003/auth/reset-email",
         body
       );
       console.log(resp.data);
       if (resp.data.msg === "successful") {
         sessionStorage.setItem("softWash", JSON.stringify(resp.data.userExists))
         setTimeout(() => {
-          Navigate("/auth/verify");
+          Navigate("/UserLogin");
         }, 3000)
       }
     } catch (error) {
