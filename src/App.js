@@ -6,7 +6,7 @@ import UserRegister from "./pages/auth/register/UserRegister";
 import AuthenticatePaswdPage from "./pages/AuthenticatePaswdPage";
 import NewPaswdPage from "./pages/NewPaswdPage";
 import ResetPaswdPage from "./pages/ResetPaswdPage";
-import MainNavbar from "./components/MainNavbar";
+import PricingPage from "./pages/PricingPage";
 
 
 
@@ -21,7 +21,7 @@ function App() {
         <Route path="/auth/reset-password" element={<ResetPaswdPage />} />
          <Route path="/auth/new-password" element={<NewPaswdPage />} />
          <Route path="/auth/verify" element={<AuthenticatePaswdPage />} />
-         <Route path="/mainnavbar" element={<MainNavbar />} />
+         <Route path="/pricingpage" element={<PricingPage />} />
 
         
       </Routes>
