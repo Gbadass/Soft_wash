@@ -97,7 +97,7 @@ function PricingPage() {
         <p className="pricing-ptag fw-100 fs-4">Pricing</p>
         <h1 className="fw-bold">Check Our Affordable Prices</h1>
         <div className="cloth-title-div d-flex justify-content-center text-center mt-4">
-          <ul>
+          <ul className="flex-wrap">
           <li className="all-ptag">All</li>
           <li className="">Washing</li>
           <li className="">Iron</li>

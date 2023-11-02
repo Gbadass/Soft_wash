@@ -14,8 +14,8 @@ function Footer() {
           <Col className="">
           <Container >
             <Row fluid>
-            <Col  className="services-col text-start">
-              <div>
+            <Col xs={6} md={4} className="services-col text-start">
+              <div className="" >
               <h4 className="fw-bold fs-5">Services</h4>
               <li>Home</li>
               <li>Washing</li>
@@ -24,7 +24,7 @@ function Footer() {
               </div>
 
             </Col>
-            <Col className="services-col">
+            <Col xs={6} md={4} className="services-col ">
             <h4 className="fw-bold fs-5">About</h4>
               <li>Contact Us</li>
               <li>About Us</li>
@@ -32,7 +32,7 @@ function Footer() {
               <li>Privacy & Policy</li>
             </Col>
 
-            <Col className="services-col">
+            <Col xs={6} md={4} className="services-col mobile-margin-top">
             <h4 className="fw-bold fs-5">Contact</h4>
               <li>Contact Us</li>
               <li>About Us</li>
@@ -43,7 +43,8 @@ function Footer() {
 
           </Col>
 
-          <Col>
+          <Col xs={12} md={6} className="mobile-margin-top">
+          <form action="">
           <h5>Suscribe to our newsletter</h5>
           <p>Monthly digest of what's new and exciting from us.</p>
           <div className="d-flex  align-items-center">
@@ -53,12 +54,17 @@ function Footer() {
             </div>
   
           </div>
+          </form>
+
           </Col>
         </Row>
 
         <hr className="footer-bottom-line" />
-          <div className="d-flex justify-content-between pt-3 pb-5">
-          <p>© 2021 Wash it Laundry Private Limited.</p>
+          <div className="d-flex justify-content-between pt-3 pb-5 mobile-flex-row">
+            <div className="">
+            <p>© 2021 Wash it Laundry Private Limited.</p>
+            </div>
+
           <div className="d-flex">
             <FaTwitter className="social-icons"/>
             <FaInstagram className="social-icons"/>

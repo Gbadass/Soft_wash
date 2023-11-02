@@ -83,6 +83,11 @@ margin-top: 30px;
   margin-top: 30px;
 }
 
+.social-icons{
+  font-size: 25px;
+  margin-right: 20px;
+}
+
 @media (min-width: 768px) {
   .cloth-title-div p{
     white-space: normal;
@@ -90,8 +95,14 @@ margin-top: 30px;
   }
 }
 
-.social-icons{
-  font-size: 25px;
-  margin-right: 20px;
+@media (max-width: 768px) {
+  .mobile-margin-top {
+    margin-top: 30px; 
+  }
+
+  .mobile-flex-row{
+    flex-direction: column;
+  }
 }
+
 
