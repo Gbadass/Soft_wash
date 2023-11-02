@@ -15,10 +15,13 @@ import cosageDressImg1 from "../assets/images/corsage-dress-icon.png"
 import towelImg2 from "../assets/images/towel-icon.png"
 import casualImg1 from "../assets/images/1593151828.png"
 import Footer from "../components/Footer";
+import { useState } from "react";
 
 
 
 function PricingPage() {
+
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const mockData = [
     {
@@ -80,6 +83,20 @@ function PricingPage() {
   
   ];
 
+
+  const filteredData = mockData.filter((item) => {
+    if (selectedCategory === "All") {
+      return true; // Show all items
+    } else if (selectedCategory === "Wash & Fold") {
+      return item.description === "Washed & Fold" || item.description === "Dry Clean & Iron";
+    } else {
+      return true;
+    }
+  });
+
+
+  
+
   return (
     <div>
       <MainNavbar />
@@ -98,13 +115,48 @@ function PricingPage() {
         <h1 className="fw-bold">Check Our Affordable Prices</h1>
         <div className="cloth-title-div d-flex justify-content-center text-center mt-4">
           <ul className="flex-wrap">
-          <li className="all-ptag">All</li>
-          <li className="">Washing</li>
-          <li className="">Iron</li>
-          <li className="">Wash & Fold</li>
-          <li className="">Dry Clean</li>
-          <li className="">Steam Iron</li>
-          <li className="">Curtain Wash</li>
+          <li
+            className={selectedCategory === "All" ? "all-ptag selected" : "all-ptag"}
+            onClick={() => setSelectedCategory("All")}
+          >
+            All
+          </li>
+          <li
+            className={selectedCategory === "Washing" ? "selected" : ""}
+            onClick={() => setSelectedCategory("Washing")}
+          >
+            Washing
+          </li>
+          <li
+            className={selectedCategory === "Iron" ? "selected" : ""}
+            onClick={() => setSelectedCategory("Iron")}
+          >
+            Iron
+          </li>
+          <li
+            className={selectedCategory === "Wash & Fold" ? "selected" : ""}
+            onClick={() => setSelectedCategory("Wash & Fold")}
+          >
+            Wash & Fold
+          </li>
+          <li
+            className={selectedCategory === "Dry Clean" ? "selected" : ""}
+            onClick={() => setSelectedCategory("Dry Clean")}
+          >
+            Dry Clean
+          </li>
+          <li
+            className={selectedCategory === "Steam Iron" ? "selected" : ""}
+            onClick={() => setSelectedCategory("Steam Iron")}
+          >
+            Steam Iron
+          </li>
+          <li
+            className={selectedCategory === "Curtain Wash" ? "selected" : ""}
+            onClick={() => setSelectedCategory("Curtain Wash")}
+          >
+            Curtain Wash
+          </li>
 
           </ul>
 
@@ -112,7 +164,7 @@ function PricingPage() {
       </div>
       <Container fluid>
       <Row className="justify-content-center gap-0 column-gap-5">
-        {mockData && mockData.map((item,index)=>(
+      {filteredData.map((item, index)=>(
         <Col xs={6} md={3} className={`shadow text-center pt-5 pb-5 ${index >= 0 ? 'mt-5' : ''}`}>
         <img src={item.image} className="w-25" alt="" />
         <p className="fw-bold fs-5 mt-3">{item.name}</p>

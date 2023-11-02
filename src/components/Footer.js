@@ -2,12 +2,13 @@ import { Container, Row } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Button from 'react-bootstrap/Button';
 import { FaTwitter,FaInstagram,FaFacebook } from "react-icons/fa";
+import "../styles/Footer.css"
 
 
 function Footer() {
   return (
     <div>
-              <hr className="footer-line" />
+      <hr className="footer-line" />
       <Container   className="mt-5 ">
 
         <Row className="justify-content-between column-gap-5">

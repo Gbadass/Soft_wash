@@ -7,6 +7,7 @@ import AuthenticatePaswdPage from "./pages/AuthenticatePaswdPage";
 import NewPaswdPage from "./pages/NewPaswdPage";
 import ResetPaswdPage from "./pages/ResetPaswdPage";
 import PricingPage from "./pages/PricingPage";
+import Services from "./pages/Services";
 
 
 
@@ -22,6 +23,7 @@ function App() {
          <Route path="/auth/new-password" element={<NewPaswdPage />} />
          <Route path="/auth/verify" element={<AuthenticatePaswdPage />} />
          <Route path="/pricingpage" element={<PricingPage />} />
+         <Route path="/ourservices" element={<Services/>} />
 
         
       </Routes>
