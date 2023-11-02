@@ -8,6 +8,7 @@ import NewPaswdPage from "./pages/NewPaswdPage";
 import ResetPaswdPage from "./pages/ResetPaswdPage";
 import PricingPage from "./pages/PricingPage";
 import Services from "./pages/Services";
+import HomePage from "./pages/user/HomePage"
 
 
 
@@ -16,7 +17,7 @@ function App() {
     <BrowserRouter>
       {/* <ScrollToTop /> */}
       <Routes>
-        <Route path="/" element={<>you're here</>} />
+        <Route path="/" element={<HomePage/>} />
         <Route path="/UserLogin" element={<UserLogin/>}/>
         <Route path="/UserRegister" element={<UserRegister/>}/>
         <Route path="/auth/reset-password" element={<ResetPaswdPage />} />
