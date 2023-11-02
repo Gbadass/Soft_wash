@@ -52,11 +52,16 @@
   margin-top: 150px;
 }
 
-.services-col ul li{
+/* .services-col ul{
+    text-align: left !important;
+} */
+
+.services-col  li{
   list-style: none;
   font-size: 15px;
   color: #111111;
   margin-top: 10px;
+  /* text-align: left !important; */
 
 }
 
@@ -64,11 +69,29 @@
 margin-top: 30px;
 }
 
+.footer-buttonn{
+  background-color: var(--headercolor);
+  color: white;
+}
+
+
+.footer-buttonn-div{
+  margin-left: 10px;
+}
+
+.footer-bottom-line{
+  margin-top: 30px;
+}
 
 @media (min-width: 768px) {
   .cloth-title-div p{
     white-space: normal;
     width: 90%;
   }
+}
+
+.social-icons{
+  font-size: 25px;
+  margin-right: 20px;
 }
 
