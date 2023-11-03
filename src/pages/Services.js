@@ -51,7 +51,7 @@ function Services() {
                 text={"We wash your clothes and prep them to iron"}
               />
             </Col>
-            <Col xs={12} md={6} lg={4}>
+            <Col xs={12} md={6} lg={4} className="md-text-align">
               <OurServicesCard
                 image={foldClothImg}
                 title={"Wash and Fold"}
@@ -74,7 +74,7 @@ function Services() {
                 text={"We wash your clothes and prep them to iron"}
               />
             </Col>
-            <Col xs={12} md={6} lg={4} className="md-align-center">
+            <Col xs={12} md={6} lg={4} className="md-align-center md-text-align">
               <OurServicesCard
                 image={CurtainsWash}
                 title={"Wash and Fold"}

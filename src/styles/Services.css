@@ -21,3 +21,9 @@
   color: var(--headercolor);
 }
 
+@media (min-width: 768px) {
+  .md-text-align{
+    text-align: center;
+    margin: 0 auto;
+  }
+}
