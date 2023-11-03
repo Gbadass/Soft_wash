@@ -4,13 +4,17 @@
   color: white;
 }
 
+.page-navigation-title{
+  display: flex;
+  align-items: center;
+}
+
 .servicebg-container{
   background-image: url(../assets/images/service-bg.png);
   height: auto;
   background-size: cover;
   background-repeat: no-repeat;
   object-fit:cover ;
-  /* padding: 0 0 80px 80px; */
 }
 
 .service-title-div{
@@ -20,6 +24,34 @@
 .title-ptag{
   color: var(--headercolor);
 }
+
+.OurServicesCard {
+  transition: transform 1s ease-in-out;
+}
+
+.OurServicesCard:hover {
+  transform: translateY(-20px);
+}
+
+
+
+.animated-col-left {
+  transform: translateX(-30%);
+  opacity: 0;
+  transition: transform 2.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.animated-col-right {
+  transform: translateX(30%);
+  opacity: 0;
+  transition: transform 2.5s ease-in-out, opacity 1.5s ease-in-out;
+}
+
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 
 @media (min-width: 768px) {
   .md-text-align{
