@@ -34,7 +34,7 @@ function Services() {
           <div className="container d-flex justify-content-between align-items-center">
             <div className="page-navigation-title">
               <p className="fs-5 text-white">Home</p>
-              <FaChevronRight className="greatherthan-Icon" />
+              <p className="text-white fs-4">></p>
               <p className="fs-5 text-white">Pricing</p>
             </div>
             <p className="fs-3  text-white">Services</p>

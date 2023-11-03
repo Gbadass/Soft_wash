@@ -9,6 +9,7 @@ import ResetPaswdPage from "./pages/ResetPaswdPage";
 import PricingPage from "./pages/PricingPage";
 import Services from "./pages/Services";
 import HomePage from "./pages/user/HomePage"
+import About from "./pages/About";
 
 
 
@@ -25,6 +26,7 @@ function App() {
          <Route path="/auth/verify" element={<AuthenticatePaswdPage />} />
          <Route path="/pricingpage" element={<PricingPage />} />
          <Route path="/ourservices" element={<Services/>} />
+         <Route path="/about" element={<About/>} />
 
         
       </Routes>
