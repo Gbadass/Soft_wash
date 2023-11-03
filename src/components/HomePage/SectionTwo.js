@@ -9,10 +9,10 @@ import image3 from "../../assets/HomePage/images/services-img.png";
 
 export default function SectionTwo() {
   return (
-    <div className="sec-2-bg mb-5" style={{height:"86vh"}}>
+    <div className="sec-2-bg mb-5 py-4" >
       <Container fluid className="">
         <Row className="py-5 h-100">
-          <Col sm={12} md={6}>
+          <Col sm={12} md={6} className="translateY-20 duration-300">
             <div>
               <img src={image2} alt="" className="w-60 img-fluid" />
             </div>

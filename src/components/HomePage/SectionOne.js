@@ -10,7 +10,7 @@ import { useState } from "react";
 function SectionOne() {
 
   return (
-    <div className="sec-1-bg" style={{height:"100vh"}}>
+    <div className="sec-1-bg py-4" >
       <Container className=" container01 ">
         <Row className="pt-5 align-items-center">
           <Col sm={12} md={6} className="left-right ">
@@ -25,14 +25,14 @@ function SectionOne() {
                   staff does the job right the first time.
                 </p>
                 <Button variant="outline-info" className="textwhite-hover mt-4" size="lg">
-                  SHEDULE PICKUP
+                  SCHEDULE PICKUP
                 </Button>{" "}
               </div>
             </Card>
           </Col>
-          <Col sm={12} md={6} className="scale-out hover-up">
+          <Col sm={12} md={6} className="scale-out hover-up ">
             <Card className="border border-0 position-relative">
-              <img src={image1} alt="" className="w-60 img-fluid " />
+              <img src={image1} alt="" className="w-60 img-fluid translateY-20 duration-300" />
               <div className=""></div>
             </Card>
           </Col>

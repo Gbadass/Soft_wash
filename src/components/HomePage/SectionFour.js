@@ -3,51 +3,55 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import ServicesCard from "./ServicesCard";
+import ServicesCard from "../../common/ServicesCard";
 import image1 from "../../assets/HomePage/images/price-map.png";
 import image2 from "../../assets/HomePage/images/delivery-icon.png";
 import image3 from "../../assets/HomePage/images/washing-icon.png";
-// import image2 from "../../assets/HomePage/images/delivery-icon.png";
-// import image2 from "../../assets/HomePage/images/delivery-icon.png";
-// import image2 from "../../assets/HomePage/images/delivery-icon.png";
+import image4 from "../../assets/HomePage/images/dry-clean-icon.png";
+import image5 from "../../assets/HomePage/images/iron-icon.png";
+import image6 from "../../assets/HomePage/images/wash-fold-icon.png";
 
 export default function SectionFour() {
   return (
     <div
-      className="sec-4-bg mt-5 mb-5  d-flex align-items-center"
-      style={{ height: "120vh" }}
+      className="sec-4-bg pt-3 pb-3 mb-5  d-flex align-items-center"
+      // style={{ height: "130vh" }}
     >
-      <Container className="">
-        <Row className="d-flex">
-          <Col fluid sm={12} md={6}>
-            <Row>
-              <Col>
+      <Container>
+        <Row className="d-flex gap-5 py-5">
+          <Col sm={12} md={12} lg={6}>
+            <Row className="pt-5 d-flex">
+              <Col sm={6}>
                 <ServicesCard
+                  className="translateY-20 duration-300 "
                   image={image3}
                   title={"Washing"}
                   text={"We wash your clothes and prep them to iron"}
                 />
                 <ServicesCard
-                  image={image3}
+                  className="translateY-20 duration-300"
+                  image={image4}
                   title={"Dry Clean"}
                   text={"We wash your clothes and prep them to iron"}
                 />
               </Col>
-              <Col className="mt-120">
+              <Col sm={6} className="mt-80">
                 <ServicesCard
-                  image={image3}
+                  className="translateY-20 duration-300"
+                  image={image5}
                   title={"Iron"}
                   text={"We gently iron according to your fabrics soecs"}
                 />
                 <ServicesCard
-                  image={image3}
+                  className="translateY-20 duration-300"
+                  image={image6}
                   title={"Wash and Fold"}
-                  text={"We wash and fold your clothes just like used to do"}
+                  text={"We wash and fold your clothes just like mom did"}
                 />
               </Col>
             </Row>
           </Col>
-          <Col sm={12} md={6} className="mt-4">
+          <Col sm={12} md={12} lg={5} className="mt-4">
             <div className="d-flex flex-wrap gap-4">
               <Row>
                 <h1 className="text-info fs-5 fw-normal">
