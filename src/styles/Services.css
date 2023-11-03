@@ -1,0 +1,23 @@
+
+.greatherthan-Icon{
+  font-size: 20px;
+  color: white;
+}
+
+.servicebg-container{
+  background-image: url(../assets/images/service-bg.png);
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit:cover ;
+  /* padding: 0 0 80px 80px; */
+}
+
+.service-title-div{
+  text-align: center;
+}
+
+.title-ptag{
+  color: var(--headercolor);
+}
+
