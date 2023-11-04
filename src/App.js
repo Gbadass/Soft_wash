@@ -7,6 +7,7 @@ import AuthenticatePaswdPage from "./pages/AuthenticatePaswdPage";
 import NewPaswdPage from "./pages/NewPaswdPage";
 import ResetPaswdPage from "./pages/ResetPaswdPage";
 import HomePage from "./pages/user/HomePage"
+import AddressPage from "./pages/user/AddressPage";
 
 
 
@@ -16,6 +17,7 @@ function App() {
       {/* <ScrollToTop /> */}
       <Routes>
         <Route path="/" element={<HomePage/>} />
+        <Route path="/address" element={<AddressPage/>} />
         <Route path="/UserLogin" element={<UserLogin/>}/>
         <Route path="/UserRegister" element={<UserRegister/>}/>
         <Route path="/auth/reset-password" element={<ResetPaswdPage />} />
